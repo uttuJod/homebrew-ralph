@@ -10,8 +10,19 @@ class RalphOrchestrator < Formula
   depends_on "python@3.11"
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.11")
+  
+    # FIX: bootstrap pip explicitly (needed on macOS 12 / Tier-3)
+    system venv/"bin/python", "-m", "ensurepip"
+    system venv/"bin/python", "-m", "pip", "install", "--upgrade", "pip"
+  
+    # install the package
+    system venv/"bin/pip", "install", ".", "--no-deps"
+  
+    # expose CLI
+    bin.install_symlink libexec/"bin/ralph"
   end
+
 
   test do
     system "#{bin}/ralph", "--help"
