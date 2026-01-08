@@ -10,10 +10,8 @@ class RalphOrchestrator < Formula
   depends_on "python@3.11"
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/source/p/pyyaml/pyyaml-6.0.2.tar.gz"
-    sha256 "d5eef459c36e42f3e8d95c87ddf7a55b2a0920d28f9e7e9f3b7c4d6c9e34b34d"
+    sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end
-
-
 
   def install
     virtualenv_install_with_resources
