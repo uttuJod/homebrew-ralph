@@ -9,9 +9,10 @@ class RalphOrchestrator < Formula
 
   depends_on "python@3.11"
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/source/P/PyYAML/PyYAML-6.0.2.tar.gz"
-    sha256 "d4f0e4c3f9f6e9f4c3fcb6b2f7d4c0d87e5b94b2d8c98b1eb2d287a092f1c6f6"
+    url "https://files.pythonhosted.org/packages/source/p/pyyaml/pyyaml-6.0.2.tar.gz"
+    sha256 "d5eef459c36e42f3e8d95c87ddf7a55b2a0920d28f9e7e9f3b7c4d6c9e34b34d"
   end
+
 
 
   def install
